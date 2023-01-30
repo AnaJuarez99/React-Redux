@@ -1,12 +1,25 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import './App.css'
+import axios from 'axios';
+
+import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import { setUser } from './reducers/users/userSlice';
 
 function App() {
+  const dispatch = useDispatch();
+  const {email} = useSelector (state => state.user)
+
+
   const [count, setCount] = useState(0)
 
   return (
     <div className="App">
+
+      <div>El email es: {email}</div>
+
+
       <div>
         <a href="https://vitejs.dev" target="_blank">
           <img src="/vite.svg" className="logo" alt="Vite logo" />
