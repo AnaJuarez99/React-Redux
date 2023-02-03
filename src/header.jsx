@@ -4,6 +4,7 @@ import Calendario from './components/Calendario';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Routes, Route, Link, BrowserRouter} from 'react-router-dom';
 import { Navbar, Nav, NavDropdown } from 'react-bootstrap'
+import './header.css'
 
 const header = () => {
   return (

@@ -1,10 +1,17 @@
 import React, { useState, useEffect } from "react";
 import FullCalendar from "fullcalendar-reactwrapper";
 import axios from 'axios';
-import Reserva  from '../Reserva';
+import Form from '../vistas/Form';
+import Misreservas from '../vistas/Misreservas';
 import "fullcalendar-reactwrapper/dist/css/fullcalendar.min.css";
 
 const Calendario = () => {
+  const [showForm, setShowForm] = useState(false);
+
+  const handleClick2 = () => {
+    setShowForm(!showForm);
+  };
+
   const [events, setEvents] = useState([]);
   const [horas, setHoras] = useState([]);
 
@@ -12,7 +19,7 @@ const Calendario = () => {
   useEffect(() => {
     axios.get("http://localhost:8080/api/horarios", {
       headers: {
-        'Authorization': `Bearer btpfqsYr6jKww2R4w6d55opxbomp7fy0LUgHzw6V`
+        'Authorization': `Bearer tYdhiEl4bNaDUGyFLDqgGkfSbSuoXWYUkdvkMSi2`
       }
     })
       .then(response => {
@@ -46,7 +53,7 @@ const handleEventClick = (event) => {
           
         }
       })
-      .catch(error => console.error(error));
+      .catch(error => console.error(error))
 
     };
 
@@ -75,11 +82,19 @@ const handleEventClick = (event) => {
 
     />
 
+
+
 <div>
-    {horas.map((hora, index) => (
-      <div key={index}>{hora}</div>
-    ))}
-  </div>
+  {horas.map((hora, index) => (
+    <div key={index}>
+      <button onClick={handleClick2}>{hora}</button>
+    </div>
+  ))}
+
+
+</div>
+
+{showForm &&<Form/>}
   </div>
   )
 }
