@@ -1,16 +1,17 @@
 import React, { useState, useEffect } from "react";
 import axios from 'axios';
 
+
 const Misreservas = () => {
     const [data, setData] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:8080/api/misreservas?id_cliente=24', {
+    axios.get('http://localhost:8080/api/misreservas?id_cliente=38', {
       headers: {
         'Authorization': 'Bearer tYdhiEl4bNaDUGyFLDqgGkfSbSuoXWYUkdvkMSi2'
       },
     })
-      .then(response => setData(response.data.data))
+      .then(response => setData(response.data.Data))
       .catch(error => console.log(error));
   }, []);
 
@@ -27,17 +28,17 @@ const Misreservas = () => {
       .catch(error => console.log(error));
 }
   return (
-    <div>
-      <table>
+    <div class="table-responsive">
+      <table class="table">
         <thead>
           <tr>
             <th>Id Cliente</th>
             <th>Id Menu</th>
             <th>Id Mesa</th>
             <th>Fecha Reserva</th>
-            <th>Numero Tarjeta</th>
-            <th>Numero Personas</th>
-            <th>Acciones</th>
+            <th>Nº Tarjeta</th>
+            <th>Nº Personas</th>
+            <th>Opciones</th>
           </tr>
         </thead>
         <tbody>

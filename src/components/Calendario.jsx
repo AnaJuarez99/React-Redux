@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import FullCalendar from "fullcalendar-reactwrapper";
 import axios from 'axios';
 import Form from '../vistas/Form';
-import Misreservas from '../vistas/Misreservas';
 import "fullcalendar-reactwrapper/dist/css/fullcalendar.min.css";
 
 const Calendario = () => {
