@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from 'axios';
 import Misreservas from './Misreservas';
+import './form.css';
 
 const Form = () => {
     const [showForm, setShowForm] = useState(false);
@@ -32,16 +33,16 @@ const Form = () => {
     num_personas
 }, {
       headers: {
-        'Authorization': `Bearer tYdhiEl4bNaDUGyFLDqgGkfSbSuoXWYUkdvkMSi2`
+        'Authorization': 'Bearer tYdhiEl4bNaDUGyFLDqgGkfSbSuoXWYUkdvkMSi2'
       },
     })
       .then(function (response) {
         console.log(response);
-        setSuccess('La petición se realizó con éxito');
+        setSuccess('Se ha realizado correctamente');
       })
       .catch(function (error) {
         console.log(error);
-        setError('Ocurrió un error en la petición');
+        setError('ERROR');
         });
         }
   return (
@@ -50,27 +51,32 @@ const Form = () => {
       { success && <h1>{success}</h1> }
     <form onSubmit={handleSubmit}>
       <div className="form-group">
-        <label htmlFor="name">Id del Cliente:</label>
+        <label htmlFor="name"><b>Id del Cliente:</b></label>
         <input type="text" className="form-control" id="id_cliente"/>
       </div>
+
       <div className="form-group">
-        <label htmlFor="name">Id del Menu:</label>
+        <label htmlFor="name"><b>Id del Menu:</b></label>
         <input type="text" className="form-control" id="id_menu"/>
       </div>
+
       <div className="form-group">
-        <label htmlFor="subject">Id de Mesa:</label>
+        <label htmlFor="subject"><b>Id de Mesa:</b></label>
         <input type="text" className="form-control" id="id_mesa"/>
       </div>
+
       <div className="form-group">
-        <label htmlFor="message">Fecha de Reserva:</label>
+        <label htmlFor="message"><b>Fecha de Reserva:</b></label>
         <textarea className="form-control" id="fecha_reserva"></textarea>
       </div>
+
       <div className="form-group">
-        <label htmlFor="numTarjeta">Numero Tarjeta:</label>
+        <label htmlFor="numTarjeta"><b>Numero de Tarjeta:</b></label>
         <textarea className="form-control" id="num_tarjeta"></textarea>
       </div>
+
       <div className="form-group">
-        <label htmlFor="numPersonas">Numero de Personas:</label>
+        <label htmlFor="numPersonas"><b>Numero de Personas:</b></label>
         <textarea className="form-control" id="num_personas"></textarea>
       </div>
       <button type="submit" onClick={handleClick2} className="btn btn-primary">Enviar</button>

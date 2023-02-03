@@ -19,7 +19,7 @@ const Calendario = () => {
   useEffect(() => {
     axios.get("http://localhost:8080/api/horarios", {
       headers: {
-        'Authorization': `Bearer tYdhiEl4bNaDUGyFLDqgGkfSbSuoXWYUkdvkMSi2`
+        'Authorization': 'Bearer tYdhiEl4bNaDUGyFLDqgGkfSbSuoXWYUkdvkMSi2'
       }
     })
       .then(response => {
