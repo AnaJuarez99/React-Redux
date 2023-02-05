@@ -9,7 +9,8 @@ const Form = () => {
   const [success, setSuccess] = useState('');
 
   const handleClick2 = () => {
-    setShowForm(!showForm);
+   // setShowForm(!showForm);
+   window.location = "/Misreservas/"
   };
 
   function handleSubmit(event) {
@@ -39,6 +40,7 @@ const Form = () => {
       .then(function (response) {
         console.log(response);
         setSuccess('Se ha realizado correctamente');
+        handleClick2();
       })
       .catch(function (error) {
         console.log(error);
@@ -79,7 +81,7 @@ const Form = () => {
         <label htmlFor="numPersonas"><b>Numero de Personas:</b></label>
         <textarea className="form-control" id="num_personas"></textarea>
       </div>
-      <button type="submit" onClick={handleClick2} className="btn btn-primary">Enviar</button>
+      <button type="submit"  className="btn btn-primary">Enviar</button>
     </form>
 
     {showForm && <Misreservas />}

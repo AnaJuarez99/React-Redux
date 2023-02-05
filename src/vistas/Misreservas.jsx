@@ -16,7 +16,7 @@ const Misreservas = () => {
   }, []);
 
   const handleDelete = (id) => {
-    axios.delete('http://localhost:8080/api/misreservas?id=${id}', {
+    axios.delete(`http://localhost:8080/api/misreservas?id=${id}`, {
       headers: {
         'Authorization': 'Bearer tYdhiEl4bNaDUGyFLDqgGkfSbSuoXWYUkdvkMSi2'
       },
